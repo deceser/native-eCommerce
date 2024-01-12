@@ -1,8 +1,8 @@
 module.exports = {
-  arrowParens: 'avoid',
-  proseWrap: 'preserve',
-  quoteProps: 'as-needed',
-  trailingComma: 'es5',
+  arrowParens: "avoid",
+  proseWrap: "preserve",
+  quoteProps: "as-needed",
+  trailingComma: "es5",
   bracketSpacing: true,
   jsxBracketSameLine: true,
   jsxSingleQuote: false,
