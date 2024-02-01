@@ -6,17 +6,16 @@
  */
 
 import React from "react";
-import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
+import { StatusBar } from "react-native";
+
+import Navigate from "./Navigations";
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <View>
-        <Text>Hello</Text>
-      </View>
-      <ScrollView contentInsetAdjustmentBehavior="automatic"></ScrollView>
-    </SafeAreaView>
+    <>
+      <StatusBar barStyle="default" />
+      <Navigate />
+    </>
   );
 }
 
