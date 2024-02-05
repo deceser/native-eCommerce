@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  Header: {
+  header: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     borderColor: "blue",
   },
 
-  Counter: {
+  counter: {
     position: "absolute",
     padding: 2,
     backgroundColor: "#FD0B0C",

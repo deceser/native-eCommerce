@@ -9,7 +9,7 @@ interface DefaultLayoutProps extends ViewProps {
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children, ...props }) => {
   const {} = props;
-  return <View style={styles.DefaultLayout}>{children}</View>;
+  return <View style={styles.defaultLayout}>{children}</View>;
 };
 
 export default DefaultLayout;
