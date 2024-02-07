@@ -1,1 +1,1 @@
-export * from "./ui";
+export { default as AddToCartButton } from "./ui";

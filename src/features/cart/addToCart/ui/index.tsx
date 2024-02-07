@@ -1,12 +1,25 @@
 import React from "react";
+import { Text, Pressable } from "react-native";
 
-import Button from "../../../../shared/button";
+import { useCart } from "../model";
 
-type Props = {};
+import { styles } from "./style";
 
-const AddToCart: React.FC<Props> = ({ ...props }) => {
-  const {} = props;
-  return <Button onPress={() => "s"}>Add to Cart</Button>;
+interface Props {
+  item: any;
+
+  //need add item props
+}
+
+const AddToCartButton: React.FC<Props> = ({ ...props }) => {
+  const { item } = props;
+  const { addToCart } = useCart();
+
+  return (
+    <Pressable style={styles.button} onPress={() => addToCart(item)}>
+      <Text style={styles.textButton}>Add to Cart</Text>
+    </Pressable>
+  );
 };
 
-export default AddToCart;
+export default AddToCartButton;

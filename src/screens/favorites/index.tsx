@@ -1,26 +1,24 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
-
-import { useCart } from "../../features/cart/addToCart/model";
+import { FlatList, SafeAreaView, TextInput, TouchableOpacity, View } from "react-native";
 
 import Card from "../../widgets/card";
 
 import { styles } from "./style";
 
-const CartScreen: React.FC = () => {
+const FavoritesScreen: React.FC = () => {
   const navigation = useNavigation();
-  const { ...state } = useCart();
-
   const goToCardId = (id: any) => {
     console.log(id);
     // navigation.navigate("Cart" as never);
   };
   return (
     <SafeAreaView>
-      <View style={styles.cartScreen}>
+      <TextInput placeholder="Search" />
+
+      <View style={styles.favoritesScreen}>
         <FlatList
-          data={state.cart}
+          data={ProductDummyData}
           numColumns={2}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
@@ -40,4 +38,4 @@ const CartScreen: React.FC = () => {
   );
 };
 
-export default CartScreen;
+export default FavoritesScreen;
