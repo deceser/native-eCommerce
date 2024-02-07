@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
 
+import { useCart } from "../../features/cart/addToCart/model";
+
 import Button from "../../shared/button";
 
 import { styles } from "./style";
@@ -8,13 +10,14 @@ import { styles } from "./style";
 interface Props {
   id: string;
   productName: string;
-  productPrice: string;
+  productPrice: number;
   productAddedDate?: string;
   productCategory: string;
 }
 
 const Card: React.FC<Props> = ({ ...props }) => {
-  const { productName, productPrice, productCategory } = props;
+  const { productName, productPrice, productCategory, id } = props;
+  const { addToCart } = useCart();
 
   return (
     <View style={styles.ProductItem}>
@@ -26,7 +29,7 @@ const Card: React.FC<Props> = ({ ...props }) => {
       </View>
 
       <View style={styles.ProductButton}>
-        <Button onPress={() => console.log("cart")}>Add to Cart</Button>
+        <Button onPress={() => addToCart(props)}>Add to Cart</Button>
         <Button onPress={() => console.log("favorite")}>Add to Favorite</Button>
       </View>
     </View>

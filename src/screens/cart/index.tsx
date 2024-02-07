@@ -2,14 +2,15 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 
-import Card from "../../widgets/card";
+import { useCart } from "../../features/cart/addToCart/model";
 
-import { ProductDummyData } from "../../fake";
+import Card from "../../widgets/card";
 
 import { styles } from "./style";
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation();
+  const { ...state } = useCart();
 
   const goToCardId = (id: any) => {
     console.log(id);
@@ -19,7 +20,7 @@ const HomeScreen: React.FC = () => {
     <SafeAreaView>
       <View style={styles.homeScreen}>
         <FlatList
-          data={ProductDummyData}
+          data={state.cart}
           numColumns={2}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (

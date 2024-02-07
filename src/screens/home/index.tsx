@@ -12,7 +12,6 @@ import { styles } from "./style";
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation();
-
   const goToCardId = (id: any) => {
     console.log(id);
     // navigation.navigate("Cart" as never);
