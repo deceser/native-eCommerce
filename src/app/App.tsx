@@ -9,14 +9,14 @@ import React from "react";
 import { StatusBar } from "react-native";
 
 import Navigate from "./Navigations";
-import { CartProvider } from "../features/cart/addToCart/model";
+import { CombinedProvider } from "./store";
 
 function App(): React.JSX.Element {
   return (
-    <CartProvider>
+    <CombinedProvider>
       <StatusBar barStyle="default" />
       <Navigate />
-    </CartProvider>
+    </CombinedProvider>
   );
 }
 

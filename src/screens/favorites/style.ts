@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   favoritesScreen: {
-    height: "98%",
+    height: "100%",
     // ===========
 
     display: "flex",

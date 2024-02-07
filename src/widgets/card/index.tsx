@@ -2,6 +2,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 
 import { AddToCartButton } from "../../features/cart/addToCart";
+import { AddToFavoriteButton } from "../../features/favorites/addToFavorites";
 
 import { styles } from "./style";
 
@@ -27,6 +28,7 @@ const Card: React.FC<Props> = ({ ...props }) => {
 
       <View style={styles.ProductButton}>
         <AddToCartButton item={props} />
+        <AddToFavoriteButton item={props} />
       </View>
     </View>
   );

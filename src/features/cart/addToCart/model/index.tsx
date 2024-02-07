@@ -1,4 +1,4 @@
-// CartContext.tsx
+// CartContext
 
 import React, { createContext, useContext, useState } from "react";
 import { ProductDummyData } from "../../../../fake";
