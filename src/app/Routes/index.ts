@@ -1,4 +1,4 @@
-import CartScreend from "../../screens/cart";
+import CartScreen from "../../screens/cart";
 import HomeScreen from "../../screens/home";
 import FavoritesScreen from "../../screens/favorites";
 
@@ -20,6 +20,6 @@ export const screens: Screen[] = [
 
   {
     name: "Cart",
-    component: CartScreend,
+    component: CartScreen,
   },
 ];

@@ -3,10 +3,9 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   ProductItem: {
     flex: 1,
-    height: 220,
+    height: 250,
     width: 180,
     padding: 5,
-    borderRadius: 10,
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#DEDEDE",

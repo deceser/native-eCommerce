@@ -9,6 +9,7 @@ import React from "react";
 import { StatusBar } from "react-native";
 
 import Navigate from "./Navigations";
+
 import { CombinedProvider } from "./store";
 
 function App(): React.JSX.Element {
