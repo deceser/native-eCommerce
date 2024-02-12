@@ -2,7 +2,7 @@ import React from "react";
 
 import { FlatList, SafeAreaView, TextInput, View } from "react-native";
 
-import Card from "../../widgets/card";
+import ProductCard from "../../widgets/product-card";
 
 import { ProductDummyData } from "../../fake";
 import { styles } from "./style";
@@ -42,7 +42,8 @@ const HomeScreen: React.FC<Product> = () => {
           numColumns={2}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <Card
+            <ProductCard
+              card="default"
               id={item.id}
               productName={item.productName}
               productPrice={item.productPrice}

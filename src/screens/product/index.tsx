@@ -1,7 +1,9 @@
 import React from "react";
 import { SafeAreaView, View } from "react-native";
 
-import Card from "../../widgets/card";
+import { AddToCartButton } from "../../features/cart/addToCart";
+
+import Card from "../../widgets/product-card";
 
 import { styles } from "./style";
 
@@ -30,12 +32,17 @@ const ProductScreen: React.FC<Props> = ({ route }) => {
         {product && (
           <View style={styles.cardContainer}>
             <Card
+              card="default"
               id={product.id}
               productName={product.productName}
               productPrice={product.productPrice}
               productAddedDate={product.productAddedDate}
               productCategory={product.productCategory}
             />
+
+            <View>
+              <AddToCartButton item={product} />
+            </View>
           </View>
         )}
       </View>

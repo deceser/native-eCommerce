@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  ProductItem: {
+  default: {
     flex: 1,
     height: 250,
     width: 180,
@@ -10,19 +10,27 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#DEDEDE",
     margin: 5,
+
+    position: "relative",
   },
 
-  ProductImage: {
+  productImage: {
     width: "100%",
     resizeMode: "cover",
-
-    borderWidth: 1,
-    borderColor: "blue",
   },
 
-  ProductButton: {
+  productButton: {
     display: "flex",
     flexDirection: "column",
     gap: 2,
   },
+
+  favorite: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+  },
+
+  favoriteCard: {},
+  cartCard: {},
 });

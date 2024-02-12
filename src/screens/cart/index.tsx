@@ -1,9 +1,9 @@
 import React from "react";
-import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { FlatList, SafeAreaView, View, Text } from "react-native";
 
 import { useCart } from "../../features/cart/addToCart/model";
 
-import Card from "../../widgets/card";
+import Card from "../../widgets/product-card";
 
 import { styles } from "./style";
 
@@ -12,6 +12,7 @@ const CartScreen: React.FC = () => {
 
   return (
     <SafeAreaView>
+      <Text>Cart</Text>
       <View style={styles.cartScreen}>
         <FlatList
           data={state.cart}
@@ -24,6 +25,7 @@ const CartScreen: React.FC = () => {
               productPrice={item.productPrice}
               productAddedDate={item.productAddedDate}
               productCategory={item.productCategory}
+              card="default"
             />
           )}
         />

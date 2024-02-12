@@ -19,8 +19,8 @@ const NavigationTab = () => {
           component={screen.component}
           options={{
             headerShown: false,
-            tabBarItemStyle: { paddingBottom: 10 },
-            tabBarStyle: { padding: 10, height: 70 },
+            tabBarIcon: () => screen.tabIcon,
+            title: "",
           }}
         />
       ))}

@@ -15,6 +15,8 @@ interface FavoriteContextData {
   data: Product[];
   favorite: Product[];
   addToFavorite: (product: Product) => void;
+  removeFromFavorite: (id: string) => void;
+  isFavorite: (id: string) => boolean;
 }
 
 const FavoriteContext = createContext<FavoriteContextData>({} as FavoriteContextData);
@@ -29,6 +31,7 @@ export const FavoriteProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const foundItem = favoriteState.favorite.find(e => e.id === item.id);
 
     if (foundItem) {
+      removeFromFavorite(foundItem.id);
       console.log("This product was already in your favorite!");
       return;
     }
@@ -41,7 +44,24 @@ export const FavoriteProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     console.log("Product added to favorite!");
   };
 
-  return <FavoriteContext.Provider value={{ ...favoriteState, addToFavorite }}>{children}</FavoriteContext.Provider>;
+  const removeFromFavorite = (id: string) => {
+    setFavoriteState(prevState => ({
+      ...prevState,
+      favorite: prevState.favorite.filter(item => item.id !== id),
+    }));
+
+    console.log("Product removed from favorite!");
+  };
+
+  const isFavorite = (id: string) => {
+    return favoriteState.favorite.some(item => item.id === id);
+  };
+
+  return (
+    <FavoriteContext.Provider value={{ ...favoriteState, isFavorite, addToFavorite, removeFromFavorite }}>
+      {children}
+    </FavoriteContext.Provider>
+  );
 };
 
 export const useFavorite = () => useContext(FavoriteContext);
