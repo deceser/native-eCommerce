@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  default: {
+  productCard: {
     flex: 1,
     height: 250,
     width: 180,
@@ -30,7 +30,4 @@ export const styles = StyleSheet.create({
     top: 5,
     right: 5,
   },
-
-  favoriteCard: {},
-  cartCard: {},
 });

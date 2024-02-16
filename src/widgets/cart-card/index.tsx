@@ -4,8 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./style";
 
-import { AddToFavoriteButton } from "../../features/favorites/addToFavorites";
-
 interface Props {
   id: string;
   productName: string;
@@ -14,7 +12,7 @@ interface Props {
   productCategory: string;
 }
 
-const ProductCard: React.FC<Props> = ({ ...props }) => {
+const CartCard: React.FC<Props> = ({ ...props }) => {
   const { productName, productPrice, productCategory, id } = props;
   const navigation = useNavigation();
 
@@ -24,19 +22,16 @@ const ProductCard: React.FC<Props> = ({ ...props }) => {
 
   return (
     <TouchableOpacity onPress={() => goToProductScreen(props)}>
-      <View style={styles.productCard}>
+      <View style={styles.cartCard}>
         <Image style={styles.productImage} />
-        <View style={styles.favorite}>
-          <AddToFavoriteButton item={props} />
-        </View>
-        <View>
+        <View style={styles.prodictInfo}>
           <Text>{productName}</Text>
-          <Text>{productPrice} $</Text>
           <Text>{productCategory}</Text>
+          <Text>{productPrice} $</Text>
         </View>
       </View>
     </TouchableOpacity>
   );
 };
 
-export default ProductCard;
+export default CartCard;

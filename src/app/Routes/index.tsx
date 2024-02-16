@@ -2,6 +2,7 @@ import CartScreen from "../../screens/cart";
 import CartSVG from "../../shared/icons/cart";
 
 import HomeScreen from "../../screens/home";
+import HomeSVG from "../../shared/icons/home";
 
 import FavoritesScreen from "../../screens/favorites";
 import HeartSVG from "../../shared/icons/heart";
@@ -16,7 +17,7 @@ export const screens: Screen[] = [
   {
     name: "Home",
     component: HomeScreen,
-    tabIcon: <CartSVG stroke="none" width={22} height={22} fill="" />,
+    tabIcon: <HomeSVG stroke="none" width={22} height={22} fill="black" />,
   },
 
   {
